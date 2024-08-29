@@ -27,45 +27,15 @@ from time import strftime
 #import time
 from datetime import timedelta
 import math 
-# Initializing a date and time 
-'''
-inicio = cronometro()
-# Seu código aqui
 
-
-#start = time.perf_counter()
-#print(start)
-
-#input(dt)
-
-while True: 
-    fim = cronometro()
-    time_delta = datetime.timedelta(seconds=fim-inicio) 
-    #print(time_delta)
-    #print(inicio)    
-    date_and_time_of_video = (date_and_time_of_video + time_delta)
-    #date_and_time_of_video = date_and_time_of_video + time_sec
-    print(date_and_time_of_video)
-#current_time_24hr = time.strftime("%H:%M:%S")
-#current_time#_12hr = time.strftime("%I:%M:%S %p")
-#current_date = time.strftime("%Y-%m-%d")
-'''
-#model = YOLO('best_new_bees.pt')
 ROOT = os.getcwd()
 annotator = sv.LineZoneAnnotator()
 #input(ROOT)
-#model = YOLO(r"C:\Users\imich\OneDrive\Documentos\Clutch\Abelhas\abelhas_chegando.pt")
-#model = YOLO("yolov8n.pt")
-model = YOLO("yolov8n-pose.pt")
-#model.names
-#model.names = {0: 'Abelha'}
-#input(model.names)
 
-CCTV = os.path.join(ROOT, "rael_cctv.mp4")
-CCTV2 = os.path.join(ROOT, "rael_CCTV_2.mp4")
-#input(CCTV)
-frames_generator = sv.get_video_frames_generator(CCTV2, start = 0, stride=3)
-#frames_generator = sv.get_video_frames_generator(CCTV2, start = 0)
+model = YOLO("yolov8n-pose.pt")
+
+CCTV = "YOURVIDEOPATH" 
+frames_generator = sv.get_video_frames_generator(CCTV, start = 0, stride=3)
 
 bounding_box_annotator = sv.BoxAnnotator()
 label_annotator = sv.LabelAnnotator()
